@@ -1,0 +1,49 @@
+# -*- coding: utf-8 -*-
+import time
+print "Budzisz sie w ciemnym pomiszczniu."
+print "Powietrze jest wilgotne, czujesz swat morza."
+time.sleep (3)
+print ". \n" * 3
+print "Po jakims czasie twoje oczy przyzwyczajaja sie do"
+print "panujacej tu ciemnosci. Widzisz ze zarowno sciany"
+print "jak i podloga sa wykonane z drewna."
+print "Przez szczeliny miedzy deskami wpadaja do srodka"
+print "pojedyncze promienie slonca."
+print "Kreci Ci sie w glowie i czujesz delikatne"
+print "mdlosci wywolane kolysaniem sie calego pokoju."
+print "Slyszysz kroki na zewnatrz pomieszczenia."
+print "Otwierają się drzwi, których wcześniej nie zauważyłeś."
+print "Wchodzi przez nie mezczyzna odziany w ubrania charakterysyczne dla flisaka.\n"
+print "W koncu sie obudziles, kapitan już chcial spisac cie na straty"
+print "i wyrzucic za burte. Pamietasz skad sie tu wziales?\n"
+print " Tak    Nie    Nic nie mow"
+odp = raw_input("> ")
+if odp == "Tak":
+ print "Naprawdę? Kiedy Cie wylowilismy cie z wraku byles"
+ print "kompletnie nieprzytomny. Ale nie bede sie z toba spieral."
+ print "Jak Ci na imie nieszczesniku jesli mozna wiedziec?"
+ imie = raw_input("> ")
+ print "Milo mi Cie poznac %s. Nazywam sie Lind." %imie
+ print "Chętnie bym Cię poznał lepiej, ale nie mamy czasu na pogawedki."
+ print "Kapitan chcial sie z toba zobaczyc, jest na mostku."
+elif odp == "Nie":
+  print "Wylowilismy Cie z wraku statku prawdopodobnie zatopionego"
+  print "przez piratow. Pozniej Ci opowiem dokładnie, teraz nie mamy"
+  print "czasu na pogawedki, kapitan Cie oczekuje. Ale zanim wyjdziesz"
+  print "moglbys mi podac swoje imie?"
+  imie = raw_input("> ")
+  print "Milo mi Cie poznac, nazywam sie Lind. A teraz lec na gore, na mostek."
+elif odp == "Nic nie mow":
+  print "Jestes niemowa czy co? Jeżeli tak to dlugo tu nie zabawisz"
+  print "bo kapitan ma do Ciebie kilka pytan. Zanim do niego pojdziesz"
+  print "zdradzisz mi swoje imie?"
+  imie = raw_input("> ")
+  print "Ha, czyli jednak umiesz mówić %s. Nazywam sie Lind." %imie
+  print "Milo mi cie poznac, ale nie mamy czasu na pogaduszki"
+  print "kapitan sie niecierpliwi, a nie chcesz zajsc mu za skore, lec juz."
+else:
+ print "Nie rozumiem co mowisz. Moglbys powtorzyc?"
+ 
+print ""
+
+  
