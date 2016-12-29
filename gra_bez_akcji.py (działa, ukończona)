@@ -1,0 +1,282 @@
+# -*- coding: utf-8 -*-
+import time
+
+
+def rzut_kostka(n):
+ kostka = [1, 2, 3, 4, 5, 6]
+ t = 0
+ wygrana1 = 0
+ wygrana2 = 0
+ for t in range(0, n):
+  from random import randrange
+  random_index = randrange(0,len(kostka))
+  wynik1 = kostka[random_index]
+ 
+  from random import randrange
+  random_index = randrange(0,len(kostka))
+  wynik2 = kostka[random_index]
+ 
+  if wynik1 > wynik2 :
+   print "Wygrales %s do %s" %(wynik1, wynik2)
+   wygrana1 += 1
+  elif wynik1 < wynik2 :
+   print "Marynarz wygral %s do %s" %(wynik2, wynik1)
+   wygrana2 += 1
+  else:
+   print "Remis, po %s" %(wynik1)
+   t += 1
+ else:
+  print "Koniec gry \n"
+ if wygrana1 > wygrana2:
+  print "Przer Nie wierze! Musiales oszukiwac! Cale szczecie nie gralismy o forse."
+  print "Zadam rewanzu! Przyjmujesz wyzwanie?\n"
+  print "'tak'   'nie"
+  akcja = raw_input("> ")
+  if akcja == "tak":
+    print "Nie licz, ze tym razem mnie okantujesz.\n"
+    rzut_kostka(5)
+  elif akcja == 'nie':
+   print "Pff, boisz sie ze znowu przegrasz, co? Znikaj mi z oczu oszuscie.\n"
+   karczma()
+  else:
+   print "Az tak nie mozesz uwierzyc w to ze mnie ograles? Uznam to za"
+   print "komplement. A teraz lec do kapitana. Chcial zebys do niego przyszedl"
+   print "a raczej nie bedzie zagowolony jak dowie sie ze siedzisz tu ze mna"
+   print "i grasz w kosci.\n"	
+   karczma()
+ elif wygrana2 > wygrana1:
+  print "Ha, wiedzialem ze wygram, ciesz sie ze nie gramy o forse."
+  print "Chcesz sprobowac jeszcze raz?\n"
+  print "'tak'   'nie'"
+  akcja = raw_input("> ")
+  if akcja == "tak":
+   print "Chcesz jeszcze raz przegrac? Nie mam nic przeciwko.\n"
+   rzut_kostka(5)
+  elif akcja == 'nie':
+   print "Nie dziwie Ci sie. Podobno kapitan chcial z toba porozmawiac"
+   print "wiec lec do niego jak najszybciej zanim dowie sie ze siedzisz"
+   print "tu ze mna i grasz w kosci.\n"
+   karczma()
+  else:
+   print "Az tak nie mozesz pogodzic sie z porazka, ze nie umiesz"
+   print "odpowiedziec na proste pytanie? Dobra nowy, lec na mostek"
+   print "kapitan Cie szukal, a raczej nie bedzie zadowolony gdy dowie"
+   print "sie ze siedzisz tu ze mna i grasz w kosci.\n"
+   karczma()
+       
+ else:
+  print "Ha to byl rowny pojedynek. Chcesz sprobowac raz jeszcze?\n"
+  print "'tak'   'nie"
+  akcja = raw_input("> ")
+  if akcja == "tak":
+   print "A wiec grajmy.\n"
+   rzut_kostka(5)
+  elif akcja == 'nie':
+   print "Ehh szkoda, byles naprawde godnym przeciwnikiem.\n"
+   karczma()
+  else:
+   print "Nie rozumiem co mowisz. Ale nie mamy czasu na pogawedki."
+   print "Kapitan chcial sie z toba zobaczyc wiec lec na mostek"
+   print "zanim dowie sie, ze siedzisz tu ze mna i grasz w kosci. \n"
+   karczma()
+  
+def lind1(odp):
+ if odp == "tak":
+  print "\nNaprawde? Kiedy Cie wylowilismy cie z wraku byles"
+  print "kompletnie nieprzytomny. Ale nie bede sie z toba spieral."
+  print "Jak Ci na imie nieszczesniku jesli mozna wiedziec?"
+  imie = raw_input("> ")
+  print "\nMilo mi Cie poznac %s. Nazywam sie Lind." %imie
+  print "Chetnie bym Cie poznal lepiej, ale nie mamy czasu na pogawedki."
+  print "Kapitan chcial sie z toba zobaczyc, jest na mostku."
+ elif odp == "nie":
+  print "\nWylowilismy Cie z wraku statku prawdopodobnie zatopionego"
+  print "przez piratow. Pozniej Ci opowiem dokladnie, teraz nie mamy"
+  print "czasu na pogawedki, kapitan Cie oczekuje. Ale zanim wyjdziesz"
+  print "moglbys mi podac swoje imie?"
+  imie = raw_input("> ")
+  print "\nMilo mi Cie poznac, nazywam sie Lind. A teraz lec na gore, na mostek."
+ elif odp == "nic nie mow":
+  print "\nJestes niemowa czy co? Jezeli tak to dlugo tu nie zabawisz"
+  print "bo kapitan ma do Ciebie kilka pytan. Zanim do niego pojdziesz"
+  print "zdradzisz mi swoje imie?"
+  imie = raw_input("> ")
+  print "Ha, czyli jednak umiesz mowic %s. Nazywam sie Lind." %imie
+  print "Milo mi cie poznac, ale nie mamy czasu na pogaduszki"
+  print "kapitan sie niecierpliwi, a nie chcesz zajsc mu za skore, lec juz."
+ elif odp == "a":
+  mostek()
+ else:
+  print "\nNie rozumiem co mowisz. Moglbys powtorzyc?"
+  lind1(raw_input("> "))
+
+def rozmowa_lind():
+ print "\n Chetnie bym z toba porozmawial, ale musisz isc spotkac sie z kapitanem."
+ pokoj()
+  
+def pokoj():
+ print "\n Co chcesz zrobic? \n"
+ print "'rozejrzyj'   'rozmawiaj lind'   'idz korytarz'\n"
+ akcja = raw_input("> ")
+ if akcja == "rozejrzyj":
+  print "\n Jest to zapewne magazyn statku, wszedzie walaja"
+  print "sie skrzynie, worki, skrzynie."
+  pokoj()
+ elif akcja == "rozmawiaj lind":
+  print "\n Chetnie bym z toba porozmawial, ale musisz isc sie spotkac z kapitanem."
+  pokoj()
+ elif akcja == "idz korytarz":
+  korytarz()
+ else:
+  pokoj()
+
+def karczmarz():
+  print "\n Witaj, nie widzialem Cie tu wczesniej. Nie pracujesz na statku prawda?"
+  print "Mam nadzieje ze zostaniesz na dluzej. Podac Ci cos? \n"
+  print "'kup piwo'   'kup kurczaka'   'odejdz'"
+  zakup = raw_input("> ")
+  if zakup == "kup piwo" or "kup kurczaka":
+   print "\n Nie masz odpowiednio duzo pieniedzy."
+   karczma()
+  elif zakup == "odejdz":
+   karczma()
+  else:
+   karczmarz()
+  
+  
+def korytarz():
+ print "\n Znajdujesz sie na drewnianym korytarzu, znajduje sie tu"
+ print "cala masa drzwi, zapewne prowadzacych do pokoi mieszkalnych."
+ print "Co chcesz zrobic? \n"
+ print "'rozejrzyj'   'idz gora'   'idz dol'\n"
+ akcja = raw_input("> ")
+ if akcja == "rozejrzyj":
+  korytarz()
+ elif akcja == "idz gora":
+  poklad()
+ elif akcja == "idz dol":
+  karczma()
+ else:
+  korytarz()
+
+
+def karczma ():
+ print "\n Jestes w pokoju stylizowanym na jedna z karczm"
+ print "ktore mozna znalezc w miastach. Nie ma w niej praktycznie nikogo."
+ print "Za szynkwasem stoi oberzysta, a przy jednym ze stolikow"
+ print "siedzi lekko przygarbiony mezczyzna w ubraniu marynarza."
+ print "\n Co robisz? \n"
+ print "'rozejrzyj'   'rozmawiaj oberzysta'   'rozmawiaj marynarz'   'idz gora'\n"
+ akcja = raw_input("> ")
+ if akcja == "rozejrzyj":
+  karczma()
+ elif akcja == "rozmawiaj oberzysta":
+  print "\nPodchodzisz do lady i zagadujesz karczmarza. \n"
+  karczmarz()
+ elif akcja == "idz gora":
+  korytarz()
+ elif akcja == "rozmawiaj marynarz":
+  print "\n Ha, to Ty jestes tym ktorego wylowilismy z tego wraku? Miales duzo szczescia"
+  print "ze akurat tamtedy przeplywalismy. Nikt w sumie nie sadzil, ze zyjesz"
+  print "ale Lind upieral sie, ze czuje u Ciebie puls i tak zapadla decyzja"
+  print "o zabraniu Cie tu. A skoro juz tu jestes to moze zagrasz ze mna w kosci? \n\n"
+  print "'tak'   'nie'"
+  akcja = raw_input("> ")
+  if akcja == "nie":
+   print "\n Ehh, szkoda, ale coz, najwyrazniej boisz sie przegranej. Bywaj!"
+   karczma()
+  elif akcja == "tak":
+   print "\n Jestes tu nowy, wiec nie zagramy na pieniadze, zeby nie oskubac Cie do cna"
+   print "ale nie licz na to ze wygrasz."
+   rzut_kostka(5)
+ else:
+  karczma()
+  
+def kapitan():
+ print "\n Oh, emm wybacz, przysnelo mi sie. Ale wracajac do waznych spraw."
+ print " W końcu sie obudziles, a wiec pora odpowiedziec na kilka pytań."
+ print "Po pierwsz, co robiles na tamtym statku?"
+ print "'nie wiem'   'nic nie mow'"
+ akcja = raw_input("> ")
+ if akcja == 'nie wiem':
+  print "\n Ehh, nic nie paamietasz co? Moze to i lepiej."
+  print "Trudno. Nie poradzimy nic na twoja niepamiec."
+  print "Przynajmniej obecnie. Na cale szczescie wiem kto moze w tym pomoc."
+  print "Ale o tym pogadamy jak bedziemy juz w porcie."
+  koniec()
+ elif  akcja == "nic nie mow":
+  print "\n Nie masz zamiaru odpowiadac co? Doskonale wiem"
+  print "co to byl za statek i co tam przewoziliscie, wiec"
+  print "tylko kwestia czasu jest dowiedzenie sie co tam robiles."
+  print "Kiedy tylko dobijemy do portu, zajdziemy do pewnej osoby"
+  print "ktora otworzy Ci usta."
+  koniec()
+ else:
+  print "\n Myslisz, ze jak bedziesz belkotaljak glupiec"
+  print "puszcze Cie wolno? Nie licz nawet na to, kiedy"
+  print "tylko dobijemy do portu zaprowadze Cie do osoby"
+  print "ktora otworzy Ci usta."
+  koniec()
+  
+def poklad():
+ print "\n Jestes na pokladzie dosc malego statku."
+ print "Czujesz powiew morskiego powietrza, a w oddali widac port."
+ print "Na statku pelno marynarzy, odzianych w swoje robocze ubranie."
+ print "Nikt nie zwrocil zbytniej uwagi na twoje pojawienie sie."
+ print "\n Co robisz?\n"
+ print "'rozejrzyj'   'idz mostek'   'idz pod poklad'\n"
+ akcja = raw_input("> ")
+ if akcja == "rozejrzyj":
+  poklad()
+ elif akcja == "idz mostek":
+  mostek()
+ elif akcja == "idz pod poklad":
+  korytarz()
+ else:
+  poklad()
+  
+def mostek():
+ print "\n Jestes na kapitanskim mostku, widac z niego caly poklad."
+ print "Sam kapitan drzemie na stolku. Odziny jest w elegancki mundur"
+ print "sporych rozmiwarow kapelusz, a na jego piersi jest wiele odznaczeń."
+ print "\n Co robisz?\n"
+ print "'rozejrzyj'   'idz poklad'   'rozmawaiaj kapitan'\n"
+ akcja = raw_input("> ")
+ if akcja == "rozejrzyj":
+  mostek()
+ elif akcja == "idz poklad":
+  poklad()
+ elif akcja == "rozmawiaj kapitan":
+  kapitan()
+ else:
+  mostek()
+ 
+def koniec():
+ print "\n\n Brawo! Ukonczyles wlasnie prolog gry, ktora wlasciwie"
+ print "nie ma jeszcze nawet nazwy. Mam nadzieje, ze 10 minut ktore"
+ print "poswieciles/as na jej przejscie nie jest czasem straconym :)"
+ print "Przy pozytywnym feedbacku ze strony odbiorcow, postaram sie"
+ print "kontynuowac tworzenie tej historii."
+ 
+def poczatek():
+ print "Budzisz sie w ciemnym pomiszczniu."
+ print "Powietrze jest wilgotne, czujesz swat morza."
+ time.sleep (2)
+ print ". \n" * 3  
+ print "Po jakims czasie twoje oczy przyzwyczajaja sie do"
+ print "panujacej tu ciemnosci. Widzisz ze zarowno sciany"
+ print "jak i podloga sa wykonane z drewna."
+ print "Przez szczeliny miedzy deskami wpadaja do srodka"
+ print "pojedyncze promienie slonca."
+ print "Kreci Ci sie w glowie i czujesz delikatne"
+ print "mdlosci wywolane kolysaniem sie calego pokoju."
+ print "Slyszysz kroki na zewnatrz pomieszczenia."
+ print "Otwieraja sie drzwi, ktorych wczesniej nie zauwazyles."
+ print "Wchodzi przez nie mezczyzna odziany w ubrania charakterysyczne dla flisaka.\n"
+ print "W koncu sie obudziles, kapitan juz chcial spisac cie na straty"
+ print "i wyrzucic za burte. Pamietasz skad sie tu wziales?\n"
+ print " 'tak'    'nie'    'nic nie mow'"
+ lind1(raw_input("> "))
+ pokoj()
+ 
+poczatek()
