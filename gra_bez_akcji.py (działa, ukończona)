@@ -84,7 +84,7 @@ def lind1(odp):
  if odp == "tak":
   print "\nNaprawde? Kiedy Cie wylowilismy cie z wraku byles"
   print "kompletnie nieprzytomny. Ale nie bede sie z toba spieral."
-  print "Jak Ci na imie nieszczesniku jesli mozna wiedziec?"
+  print "Jak Ci na imie nieszczesniku jesli mozna wiedziec?\n"
   imie = raw_input("> ")
   print "\nMilo mi Cie poznac %s. Nazywam sie Lind." %imie
   print "Chetnie bym Cie poznal lepiej, ale nie mamy czasu na pogawedki."
@@ -194,9 +194,9 @@ def karczma ():
   
 def kapitan():
  print "\n Oh, emm wybacz, przysnelo mi sie. Ale wracajac do waznych spraw."
- print " W końcu sie obudziles, a wiec pora odpowiedziec na kilka pytań."
+ print " W koncu sie obudziles, a wiec pora odpowiedziec na kilka pytań."
  print "Po pierwsz, co robiles na tamtym statku?"
- print "'nie wiem'   'nic nie mow'"
+ print "'nie wiem'   'nic nie mow\n'"
  akcja = raw_input("> ")
  if akcja == 'nie wiem':
   print "\n Ehh, nic nie paamietasz co? Moze to i lepiej."
