@@ -1,28 +1,32 @@
 # -*- coding: utf-8 -*-
 import time
 
-#uniwersalna definicja akcji, póki co nie działa
+#uniwersalna definicja akcji
 def akcja(miejsce, ruch, rozmowa):
  print "Co robisz?"
  n = 0
  print "rozejrzyj"
- while (len(rozmowa) > n):
-  print "%e'   " %(rozmowa[n])
+ 
+ while (n < len(rozmowa)):
+  r = rozmowa.pop(0)
+  print r
   n += 1
+ 
  n = 0
- while (len(ruch) > n):
-  print "'%e'   "%(ruch[n])
+ while (n < len(ruch)):
+  t = ruch.pop(0)
+  print t
   n += 1
   
  decyzja = raw_input("> ")
- if decyzja == "rozejrzyj":
+ if decyzja == 'rozejrzyj':
   miejsce()
  elif decyzja in ruch:
-  "%s" %(decyzja)
+  return decyzja()
  elif decyzja in rozmowa:
-  "%s" %(decyzja)
+  return decyzja()
  else:
-  miejsce
+  miejsce()
 
 def sklep(miejsce, towar):
  n = 0
@@ -152,9 +156,8 @@ def lind():
  pokoj()
   
 def pokoj():
- idz_korytarz = korytarz()
- rozmowa_lind = lind() 
- pokoj = pokoj()
+ idz_korytarz = korytarz
+ rozmowa_lind = lind
  print "Jesteś w pokoju wyglądającym jak magazyn."
  print "Podłoga jest wyłożona słomą, a wszędzie leżą skrzynie i pakunki." 
  print "Na jednym z pojemników siedzi Lind."
@@ -167,12 +170,12 @@ def karczmarz():
  sklep(karczma, ['kup piwo', 'kup kurzaka'])
   
 def korytarz():
- idz_gora = poklad()
- idz_dol = karczma()
- korytarz = korytarz()
+ idz_gora = poklad
+ idz_dol = karczma
+ korytarz
  print "Znajdujesz sie na drewnianym korytarzu, znajduje sie tu"
  print "cala masa drzwi, zapewne prowadzacych do pokoi mieszkalnych."
- akcja(korytarz, [], [idz_gora, idz_dol])
+ akcja(korytarz, [idz_gora, idz_dol] , [])
 
 def karczma ():
  print "Jestes w pokoju stylizowanego na jedna z karczm"
