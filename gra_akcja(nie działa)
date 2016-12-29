@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import time
 
-#uniwersalna definicja akcji
+#uniwersalna definicja akcji, póki co nie działa
 def akcja(miejsce, ruch, rozmowa):
  print "Co robisz?"
  n = 0
